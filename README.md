@@ -11,6 +11,7 @@ Test interview for 4Tek company
 - Deploy to vercel
 
 # Demo
+Domain: https://etech.tinspham.dev
 
 ## English
 <img src="./docs/web.png" />
