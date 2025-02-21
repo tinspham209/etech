@@ -8,8 +8,8 @@ import { Check, ChevronDown } from "lucide-react";
 import { useLocale } from "@/lib/i18n";
 
 const languages = [
-	{ code: "en", name: "English", flag: "/flags/us.svg" },
 	{ code: "vi", name: "Vietnamese", flag: "/flags/vn.svg" },
+	{ code: "en", name: "English", flag: "/flags/us.svg" },
 ];
 const HeaderLocale: FC<{
 	isMobile?: boolean;
@@ -39,16 +39,16 @@ const HeaderLocale: FC<{
 	return (
 		<Popover open={open} onOpenChange={setOpen}>
 			<PopoverTrigger
-				className={`flex items-center gap-2 rounded-md px-1 ${
+				className={`flex items-center gap-2 rounded-md ${
 					isMobile
 						? "border border-gray-300"
-						: " border border-transparent hover:border-gray-300 "
-				}transition`}
+						: " border border-transparent hover:border-gray-300 !ml-[84px]"
+				} transition`}
 			>
 				<img
 					src={selectedLang.flag}
 					alt={selectedLang.name}
-					className="w-7 h-7"
+					className="w-9 h-9"
 				/>
 				<ChevronDown
 					className={`w-4 h-4 ${isMobile ? "text-black" : "text-white"}`}
@@ -63,14 +63,14 @@ const HeaderLocale: FC<{
 						onClick={() => changeLanguage(lang)}
 					>
 						{selectedLang.code === lang.code ? (
-							<Check className="w-4 h-4 text-black" />
+							<Check className="w-6 h-6 text-black" />
 						) : (
-							<div className="w-4 h-4" />
+							<div className="w-6 h-6" />
 						)}
 
 						<div className="flex items-center gap-2">
-							<img src={lang.flag} alt={lang.name} className="w-9 h-9" />
-							<span className="text-sm font-medium text-black">
+							<img src={lang.flag} alt={lang.name} className="w-7 h-7" />
+							<span className="text-[10px] font-bold text-black">
 								{lang.name}
 							</span>
 						</div>

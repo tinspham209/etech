@@ -23,16 +23,31 @@ const Header: FC = () => {
 			className={`fixed top-0 left-0 right-0 h-16 transition-colors duration-300 z-50 
       ${isScrolled ? "bg-blue-500" : "bg-transparent"}`}
 		>
-			<div className="container mx-auto px-4 h-full">
-				<nav className="flex items-center justify-between h-full">
-					<img src={"/logo.png"} className="h-[42px] object-contain" />
+			<div
+				className={`mx-auto h-full ${
+					isScrolled
+						? "md:!mx-auto !px-4"
+						: "pl-4 pr-1 md:px-[78px] md:pr-[70px] md:py-[52px]"
+				}`}
+			>
+				<nav
+					className={`flex items-center justify-between h-full ${
+						isScrolled ? "" : "mt-[8px]"
+					} transition-all`}
+				>
+					<img
+						src={"/logo.png"}
+						className={`${
+							isScrolled ? "h-[42px]" : "h-[40px] md:h-[64px]"
+						} object-contain`}
+					/>
 
-					<div className="hidden md:flex space-x-10 items-center">
+					<div className="hidden md:flex space-x-20 items-center">
 						{navigationOptions.map((item) => (
 							<a
 								href={`/#${item.value}`}
 								key={item.title}
-								className="text-white font-bold hover:text-blue-100 transition-colors"
+								className="text-white text-sm font-semibold hover:text-blue-100 transition-colors"
 							>
 								{trans(item.title)}
 							</a>

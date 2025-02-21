@@ -34,7 +34,7 @@ const CountdownTimer: FC<Props> = ({ targetDate }) => {
 	}, [targetDate]);
 
 	return (
-		<div className="flex gap-2 md:gap-8 bg-white rounded-xl p-6 shadow-lg">
+		<div className="flex gap-2 md:gap-8 bg-white rounded-[21px] px-[38px] py-[18px] pb-[28px] md:px-[40px] md:py-[16px] shadow-lg">
 			{[
 				{ label: "Days", value: timeLeft.days },
 				{ label: "Hours", value: timeLeft.hours },
@@ -43,15 +43,17 @@ const CountdownTimer: FC<Props> = ({ targetDate }) => {
 			].map((item, index) => {
 				const isLastItem = index === 3;
 				return (
-					<div key={item.label} className="flex gap-2 md:gap-8">
+					<div key={item.label} className="flex gap-2 md:gap-[56px]">
 						<div className="text-center">
-							<div className="text-6xl font-bold text-black font-secondary mb-6">
+							<div className="text-[36px] md:text-[60px] font-bold text-black font-secondary">
 								{String(item.value).padStart(2, "0")}
 							</div>
-							<div className="text-sm text-black">{trans(item.label)}</div>
+							<div className="text-[12px] md:text-[16px] text-black font-bold">
+								{trans(item.label)}
+							</div>
 						</div>
 						{!isLastItem && (
-							<p className="text-5xl text-black font-secondary translate-y-3 md:translate-y-0.5">
+							<p className="text-[40px] md:text-[65px] text-black translate-y-3 md:translate-y-[8px] md:mr-[30px]">
 								:
 							</p>
 						)}
